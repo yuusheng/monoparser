@@ -11,14 +11,10 @@ createTime: 2022-02-17
 ---
 `
 it('haeder interpreter should work', () => {
-  expect(headerInterpreter(content)).toMatchInlineSnapshot(
-    `
-    {
-      "createTime": "2022-02-17",
-      "title": "我爱你中国",
-    }
-  `
-  )
+  expect(headerInterpreter(content)).toEqual({
+    createTime: '2022-02-17',
+    title: '我爱你中国',
+  })
 })
 
 it('should have md file', async () => {
