@@ -1,0 +1,21 @@
+{
+  "name": "custom-js-syntax",
+  "version": "0.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "vitest"
+  },
+  "keywords": [],
+  "author": "yuusheng <contact@yuusheng.cn>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/marked": "^4.0.7",
+    "tsx": "^3.9.0",
+    "typescript": "^4.8.3",
+    "vitest": "^0.23.2"
+  },
+  "dependencies": {
+    "marked": "^4.1.0"
+  }
+}
