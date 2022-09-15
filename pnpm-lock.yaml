@@ -1,20 +1,25 @@
 lockfileVersion: 5.4
 
-specifiers:
-  '@types/marked': ^4.0.7
-  marked: ^4.1.0
-  tsx: ^3.9.0
-  typescript: ^4.8.3
-  vitest: ^0.23.2
+importers:
 
-dependencies:
-  marked: registry.npmmirror.com/marked/4.1.0
+  .:
+    specifiers:
+      tsx: ^3.9.0
+      typescript: ^4.8.3
+      vitest: ^0.23.2
+    devDependencies:
+      tsx: registry.npmmirror.com/tsx/3.9.0
+      typescript: registry.npmmirror.com/typescript/4.8.3
+      vitest: registry.npmmirror.com/vitest/0.23.2
 
-devDependencies:
-  '@types/marked': registry.npmmirror.com/@types/marked/4.0.7
-  tsx: registry.npmmirror.com/tsx/3.9.0
-  typescript: registry.npmmirror.com/typescript/4.8.3
-  vitest: registry.npmmirror.com/vitest/0.23.2
+  packages/md-parser:
+    specifiers:
+      '@types/marked': ^4.0.7
+      marked: ^4.1.0
+    dependencies:
+      marked: registry.npmmirror.com/marked/4.1.0
+    devDependencies:
+      '@types/marked': registry.npmmirror.com/@types/marked/4.0.7
 
 packages:
 
