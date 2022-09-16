@@ -1,12 +1,9 @@
 import { it, expect, describe } from 'vitest'
-import { MarkdownParser } from '../src/bodyParser'
+import { defineConfig, MarkdownParser } from '../src'
 
 describe('markdown parser constructor', () => {
   it('should worked', () => {
+    const options = defineConfig({})
     const markdownParser = new MarkdownParser()
-
-    Object.keys({}).forEach((key) => {
-      console.log('key', key)
-    })
   })
 })

@@ -1,8 +1,6 @@
-import { promises as fs } from 'fs'
 import path from 'path'
 import { it, expect } from 'vitest'
-import { analyseArticle, getMdFile } from '../src/index'
-import { headerParser } from '../src/headerParser'
+import { analyseArticle, getMdFile, headerParser } from '../src'
 
 const content = `
 ---
