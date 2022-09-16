@@ -1,5 +1,5 @@
 import { promises as fs } from 'fs'
-import { headerInterpreter, headerReg } from './headerParser'
+import { headerParser, headerReg } from './headerParser'
 import { parse } from './bodyParser'
 
 export async function getMdFile(path: string) {
@@ -12,7 +12,7 @@ export async function getMdFile(path: string) {
 
 export async function analyseArticle(path: string) {
   let fileContent = await getMdFile(path)
-  const mdDiscription = headerInterpreter(fileContent)
+  const mdDiscription = headerParser(fileContent)
   fileContent = fileContent.replace(headerReg, '')
 
   return parse(fileContent)

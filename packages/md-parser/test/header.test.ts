@@ -2,7 +2,7 @@ import { promises as fs } from 'fs'
 import path from 'path'
 import { it, expect } from 'vitest'
 import { analyseArticle, getMdFile } from '../src/index'
-import { headerInterpreter } from '../src/headerParser'
+import { headerParser } from '../src/headerParser'
 
 const content = `
 ---
@@ -13,7 +13,7 @@ changeTime: 2022-02-17
 `
 
 it('haeder interpreter should work', () => {
-  expect(headerInterpreter(content)).toMatchInlineSnapshot(`
+  expect(headerParser(content)).toMatchInlineSnapshot(`
     {
       "changeTime": "2022-02-17",
       "createTime": "2022-02-17",

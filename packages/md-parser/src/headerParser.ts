@@ -6,7 +6,7 @@ export function getLineBreakerReg(option?: string) {
   return new RegExp('\r?\n', option)
 }
 
-export function headerInterpreter(content: string) {
+export function headerParser(content: string) {
   const matchArr = content.match(headerReg)[1].split(getLineBreakerReg())
 
   return matchArr.reduce((pre, cur) => {
