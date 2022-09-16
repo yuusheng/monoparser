@@ -6,7 +6,6 @@ export async function getMdFile(path: string) {
   const file = await fs.readFile(path, {
     encoding: 'utf-8',
   })
-  console.log('file', file)
   return file
 }
 
