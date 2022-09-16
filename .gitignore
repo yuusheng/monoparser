@@ -1,5 +1,4 @@
 node_modules/
 .vscode
 .idea
-packages/md-parser/node_modules
 **/**/node_modules
