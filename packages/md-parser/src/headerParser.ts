@@ -1,4 +1,4 @@
-import { headerContent } from './types'
+import { HeaderContent } from './types'
 
 export const headerReg = /---\r?\n(.*?)\r?\n---/is
 
@@ -13,5 +13,5 @@ export function headerParser(content: string) {
     const [key, value] = cur.split(':').map((v) => v.replace(/\s/g, ''))
     pre[key] = value
     return pre
-  }, {}) as headerContent
+  }, {}) as HeaderContent
 }

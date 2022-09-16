@@ -1,12 +1,60 @@
 import { describe, it, expect } from 'vitest'
 import { resolve } from 'path'
-import { analyseArticle, getMdFile } from '../src'
+import { analyseArticle, defineOption, getFileContent } from '../src'
 
 describe('parser', () => {
-  it('should have the discription of the md file', async () => {
+  it('should be called like this', async () => {
+    const path = resolve(__dirname, './test.md')
+    expect(await analyseArticle(path, {})).toMatchInlineSnapshot(`
+      {
+        "contentHTML": "<h1 class=\\"mb-3 \\" >h1</h1>
+      <h2 class=\\"mb-3 font-bold scroll-mt-1\\" >h2</h2>
+      <h3 class=\\"mb-3 font-bold scroll-mt-1\\" >h3</h3>
+      <h4 class=\\"mb-3 font-bold scroll-mt-1\\" >h4</h4>
+      <h5 class=\\"mb-3 font-bold scroll-mt-1\\" >h5</h5>
+      <h6 class=\\"mb-3 font-bold scroll-mt-1\\" >h6</h6>
+      <ul>
+      <li class=\\"list-disc list-inside mb-2\\">无序列表 1</li><li class=\\"list-disc list-inside mb-2\\">无序列表 2</li><li class=\\"list-disc list-inside mb-2\\">无序列表 3</li></ul>
+      <p class=\\"w-full\\">有序列表</p><ol>
+      <li class=\\"list-disc list-inside mb-2\\">Pritial<T> 把 T 的所有属性变为可选。</li><li class=\\"list-disc list-inside mb-2\\">Readonly<T> 变只读</li><li class=\\"list-disc list-inside mb-2\\">Record&lt;K,T&gt; 生成一个接口，属性为 K 的所有属性，k 的所有属性都有 T 的类型</li><li class=\\"list-disc list-inside mb-2\\">Pick&lt;T,K&gt; 抽取 T 里的属性，属性来自 K.</li><li class=\\"list-disc list-inside mb-2\\">Omit&lt;T,K&gt;和 Pick 相反（去除属性）</li><li class=\\"list-disc list-inside mb-2\\">Parameters<T> T 是 Function，提取函数里返回值为 tuple</li></ol>
+      <div class=\\"relative my-3 overflow-x-auto shadow-md shadow-gray-100 sm:rounded-lg\\">
+            <table class=\\"w-full text-left text-gray-500\\">
+              <thead class=\\"bg-gray-50 uppercase text-gray-900 dark:bg-gray-700 dark:text-gray-400\\">
+                <tr>
+      <th>命令行</th>
+      <th>功能</th>
+      </tr>
+
+              </thead>
+              <tr>
+      <td>tsc greeter.ts</td>
+      <td>编译</td>
+      </tr>
+      <tr>
+      <td></td>
+      <td></td>
+      </tr>
+      <tr>
+      <td></td>
+      <td></td>
+      </tr>
+
+            </table>
+          </div><p class=\\"w-full\\">代码片段</p><pre><code class=\\"language-typescript\\">let person: [number, string] = [1, &#39;polaire&#39;]
+      </code></pre>
+      <p class=\\"w-full\\">引用</p><blockquote  class=\\"p-4 italic border-l-4 bg-neutral-100 text-neutral-600 border-neutral-400 quote mb-3\\"><p class=\\"w-full\\">类型断言：let 声明的 any 类型变量可以在调用时后面加上类型，这样编译器不会进行特殊的数据检查和解构</p></blockquote><p class=\\"w-full\\">code: <code class=\\"bg-gray-100 text-indigo-700 p-1 mx-1 rounded\\">code</code></p>",
+        "description": {
+          "title": "TypeScript高级指南",
+        },
+      }
+    `)
+  })
+
+  it.skip('should have the discription of the md file', async () => {
     expect(await analyseArticle(resolve(__dirname, './test.md')))
       .toMatchInlineSnapshot(`
-        "<h1 id=\\"h1\\">h1</h1>
+        {
+          "contentHTML": "<h1 id=\\"h1\\">h1</h1>
         <h2 id=\\"h2\\">h2</h2>
         <h3 id=\\"h3\\">h3</h3>
         <h4 id=\\"h4\\">h4</h4>
@@ -54,12 +102,16 @@ describe('parser', () => {
         <p>类型断言：let 声明的 any 类型变量可以在调用时后面加上类型，这样编译器不会进行特殊的数据检查和解构</p>
         </blockquote>
         <p>code: <code>code</code></p>
-        "
+        ",
+          "description": {
+            "title": "TypeScript高级指南",
+          },
+        }
       `)
   })
 
-  it('should have md file', async () => {
-    expect(await getMdFile(resolve(__dirname, './test.md')))
+  it.skip('should have md file', async () => {
+    expect(await getFileContent(resolve(__dirname, './test.md')))
       .toMatchInlineSnapshot(`
         "---
         title: TypeScript 高级指南

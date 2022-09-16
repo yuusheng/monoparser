@@ -1,9 +1,9 @@
 import { it, expect, describe } from 'vitest'
-import { defineConfig, MarkdownParser } from '../src'
+import { defineOption, MarkdownParser } from '../src'
 
 describe('markdown parser constructor', () => {
   it('should worked', () => {
-    const options = defineConfig({})
-    const markdownParser = new MarkdownParser()
+    const options = defineOption({})
+    // const parser = new MarkdownParser({})
   })
 })

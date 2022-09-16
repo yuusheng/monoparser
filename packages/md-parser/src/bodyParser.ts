@@ -6,13 +6,13 @@ export function parse(content: string) {
 
 export type MarkdownParserOptions = marked.RendererObject
 
-type DefineConfigParamsType =
+type DefineOptionParamsType =
   | MarkdownParserOptions
   | (() => MarkdownParserOptions)
 
-export const defineConfig = (options: DefineConfigParamsType) => options
+export const defineOption = (options: DefineOptionParamsType) => options
 
-const defaultConfig = defineConfig({
+const defaultConfig = defineOption({
   heading(text, level, raw) {
     // let anchor = tocObj.add(text, level)
     return `<h${level} class="mb-3 ${
@@ -53,8 +53,10 @@ export class MarkdownParser {
 
     const curOptions = Object.assign(defaultConfig, options)
     Object.keys(curOptions).forEach((key) => {
-      this.renderer[key] = options[key]
+      this.renderer[key] = curOptions[key]
     })
+
+    // console.log(this.renderer)
 
     marked.setOptions({
       renderer: this.renderer,
