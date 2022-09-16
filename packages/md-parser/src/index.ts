@@ -3,9 +3,11 @@ import { headerInterpreter, headerReg } from './headerParser'
 import { parse } from './bodyParser'
 
 export async function getMdFile(path: string) {
-  return await fs.readFile(path, {
+  const file = await fs.readFile(path, {
     encoding: 'utf-8',
   })
+  console.log('file', file)
+  return file
 }
 
 export async function analyseArticle(path: string) {

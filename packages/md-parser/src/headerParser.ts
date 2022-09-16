@@ -7,10 +7,7 @@ export function getLineBreakerReg(option?: string) {
 }
 
 export function headerInterpreter(content: string) {
-  const matchArr = content
-    .match(headerReg)
-    .splice(1)[0]
-    .split(getLineBreakerReg())
+  const matchArr = content.match(headerReg)[1].split(getLineBreakerReg())
 
   return matchArr.reduce((pre, cur) => {
     const [key, value] = cur.split(':').map((v) => v.replace(/\s/g, ''))
