@@ -1,5 +1,5 @@
 import { MarkdownParser } from './bodyParser'
-import { headerParser, headerReg, parse, MarkdownParserOptions } from '.'
+import { headerParser, headerReg, MarkdownParserOptions } from '.'
 
 export function analyseArticle(
   fileContent: string,
