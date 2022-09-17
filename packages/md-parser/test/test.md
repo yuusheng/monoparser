@@ -20,12 +20,12 @@ title: TypeScript 高级指南
 
 有序列表
 
-1. Pritial<T> 把 T 的所有属性变为可选。
-2. Readonly<T> 变只读
-3. Record<K,T> 生成一个接口，属性为 K 的所有属性，k 的所有属性都有 T 的类型
-4. Pick<T,K> 抽取 T 里的属性，属性来自 K.
-5. Omit<T,K>和 Pick 相反（去除属性）
-6. Parameters<T> T 是 Function，提取函数里返回值为 tuple
+1. Pritial`<T>` 把 T 的所有属性变为可选。
+2. Readonly`<T>` 变只读
+3. Record`<K,T>` 生成一个接口，属性为 K 的所有属性，k 的所有属性都有 T 的类型
+4. Pick`<T,K>` 抽取 T 里的属性，属性来自 K.
+5. Omit`<T,K>`和 Pick 相反（去除属性）
+6. Parameters`<T>` T 是 Function，提取函数里返回值为 tuple
 
 | 命令行         | 功能 |
 | -------------- | ---- |
