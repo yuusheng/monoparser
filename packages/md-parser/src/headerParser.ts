@@ -7,7 +7,8 @@ export function getLineBreakerReg(option?: string) {
 }
 
 export function headerParser(content: string) {
-  const matchArr = content.match(headerReg)[1].split(getLineBreakerReg())
+  if (!headerReg.test(content)) return {}
+  const matchArr = content.match(headerReg)![1].split(getLineBreakerReg())
 
   return matchArr.reduce((pre, cur) => {
     const [key, value] = cur.split(':').map((v) => v.replace(/\s/g, ''))

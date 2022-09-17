@@ -6,11 +6,14 @@ export function parse(content: string) {
 
 export type MarkdownParserOptions = marked.RendererObject
 
+type KeyOfMarkdownParserOptions = keyof MarkdownParserOptions
+
 type DefineOptionParamsType =
   | MarkdownParserOptions
   | (() => MarkdownParserOptions)
 
-export const defineOption = (options: DefineOptionParamsType) => options
+export const defineOption = (options: DefineOptionParamsType) =>
+  typeof options === 'function' ? options() : options
 
 const defaultConfig = defineOption({
   heading(text, level, raw) {
@@ -55,8 +58,6 @@ export class MarkdownParser {
     Object.keys(curOptions).forEach((key) => {
       this.renderer[key] = curOptions[key]
     })
-
-    // console.log(this.renderer)
 
     marked.setOptions({
       renderer: this.renderer,

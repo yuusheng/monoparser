@@ -10,6 +10,7 @@
     "resolveJsonModule": true,
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
+    "suppressImplicitAnyIndexErrors": true,
     "jsx": "preserve",
     "types": ["node", "vite/client"],
     "paths": {
