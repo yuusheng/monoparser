@@ -1,11 +1,20 @@
 import { describe, it, expect } from 'vitest'
 import { resolve } from 'path'
-import { analyseArticle, defineOption, getFileContent } from '../src'
+import { analyseArticle, defineOption } from '../src'
+import { promises as fs } from 'fs'
+
+export async function getFileContent(path: string) {
+  const file = await fs.readFile(path, {
+    encoding: 'utf-8',
+  })
+  return file
+}
 
 describe('parser', () => {
   it('should be called like this', async () => {
     const path = resolve(__dirname, './test.md')
-    expect(await analyseArticle(path, {})).toMatchInlineSnapshot(`
+    const fileContent = await getFileContent(path)
+    expect(analyseArticle(fileContent, {})).toMatchInlineSnapshot(`
       {
         "contentHTML": "<h1 class=\\"mb-3 \\" >h1</h1>
       <h2 class=\\"mb-3 font-bold scroll-mt-1\\" >h2</h2>

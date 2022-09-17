@@ -1,0 +1,11 @@
+{
+  "name": "playground",
+  "version": "0.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "dev": "vite"
+  },
+  "author": "yuusheng <contact@yuusheng.cn>",
+  "license": "MIT"
+}
