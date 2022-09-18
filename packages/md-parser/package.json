@@ -1,9 +1,41 @@
 {
   "name": "@custom-parser/md-parser",
-  "version": "0.0.0",
-  "main": "index.ts",
+  "version": "0.1.0",
+  "discription": "A simple markdown parser base on marked",
+  "author": "yuusheng <contact@yuusheng.cn>",
+  "keywords": [
+    "markdown",
+    "marked"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./bodyParser": {
+      "types": "./dist/bodyParser.d.ts",
+      "require": "./dist/bodyParser.cjs",
+      "import": "./dist/bodyParser.mjs"
+    },
+    "./headerParser": {
+      "types": "./dist/headerParser.d.ts",
+      "require": "./dist/headerParser.cjs",
+      "import": "./dist/headerParser.mjs"
+    },
+    "./parser": {
+      "types": "./dist/parser.d.ts",
+      "require": "./dist/parser.cjs",
+      "import": "./dist/parser.mjs"
+    },
+    "./*": "./*"
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "vitest"
+    "test": "vitest",
+    "build": "unbuild"
   },
   "devDependencies": {
     "@types/marked": "^4.0.7"
