@@ -2,20 +2,21 @@
   "name": "monoparser",
   "version": "0.0.0",
   "description": "",
-  "private": true,
   "packageManager": "pnpm@7.5.1",
   "repository": "https://github.com/yuusheng/monoparser",
   "scripts": {
     "test": "vitest",
     "play": "pnpm -C playground run dev",
     "build": "rm -rf packages/*/dist && pnpm -r --filter=./packages/* run build",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "release": "bumpp package.json packages/**/package.json"
   },
   "author": "yuusheng <contact@yuusheng.cn>",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^18.7.18",
     "@vitejs/plugin-vue": "^3.1.0",
+    "bumpp": "^8.2.1",
     "eslint": "^8.23.1",
     "tsx": "^3.9.0",
     "typescript": "^4.8.3",
