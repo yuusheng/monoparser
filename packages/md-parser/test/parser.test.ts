@@ -10,10 +10,11 @@ export async function getFileContent(path: string) {
   return file
 }
 
+const path = resolve(__dirname, './test.md')
+const fileContent = await getFileContent(path)
+
 describe('parser', () => {
-  it('should be called like this', async () => {
-    const path = resolve(__dirname, './test.md')
-    const fileContent = await getFileContent(path)
+  it.skip('should be called like this', () => {
     expect(analyseArticle(fileContent, {})).toMatchInlineSnapshot(`
       {
         "contentHTML": "<h1 class=\\"mb-3 \\" >h1</h1>
@@ -57,6 +58,13 @@ describe('parser', () => {
         },
       }
     `)
+  })
+
+  it('different param return different result', () => {
+    const oneParam = analyseArticle(fileContent)
+    const threeParams = analyseArticle(fileContent, undefined, true)
+    expect(typeof oneParam.contentHTML).toBe('string')
+    expect(threeParams.contentHTML).toHaveProperty('content')
   })
 
   it.skip('should have the discription of the md file', async () => {

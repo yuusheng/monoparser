@@ -47,6 +47,11 @@ const defaultConfig = defineOption({
   },
 })
 
+export interface renderResult {
+  content: string
+  toc?: Object
+}
+
 export class MarkdownParser {
   private renderer: Renderer
   constructor(options = {} as MarkdownParserOptions) {
@@ -69,9 +74,9 @@ export class MarkdownParser {
     })
   }
 
-  render(content: string): { content: string; toc: Object }
-  render(content: string, toc: boolean): string
-  render(content: any, toc = false): any {
+  render(content: string): string
+  render(content: string, toc: boolean): renderResult
+  render(content: any, toc = false): string | renderResult {
     if (!toc) return marked(content)
     return { content: marked(content) }
   }
