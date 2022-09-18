@@ -1,5 +1,5 @@
 {
-  "name": "@custom-parser/md-parser",
+  "name": "@monoparser/md-parser",
   "version": "0.1.0",
   "discription": "A simple markdown parser base on marked",
   "author": "yuusheng <contact@yuusheng.cn>",
