@@ -69,7 +69,10 @@ export class MarkdownParser {
     })
   }
 
-  render(content: string) {
-    return marked(content)
+  render(content: string): { content: string; toc: Object }
+  render(content: string, toc: boolean): string
+  render(content: any, toc = false): any {
+    if (!toc) return marked(content)
+    return { content: marked(content) }
   }
 }
