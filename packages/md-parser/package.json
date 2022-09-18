@@ -8,6 +8,7 @@
     "markdown",
     "marked"
   ],
+  "sideEffects": false,
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -38,6 +39,9 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "vitest",
     "build": "unbuild"
