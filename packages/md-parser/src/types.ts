@@ -1,5 +1,5 @@
 export interface HeaderContent {
-  createTime: string
-  changeTime: string
-  title: string
+  createTime?: string
+  changeTime?: string
+  title?: string
 }

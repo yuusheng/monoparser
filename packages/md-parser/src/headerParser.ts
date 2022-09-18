@@ -14,5 +14,5 @@ export function headerParser(content: string) {
     const [key, value] = cur.split(':').map((v) => v.replace(/\s/g, ''))
     pre[key] = value
     return pre
-  }, {}) as HeaderContent
+  }, {} as Record<string, string>) as HeaderContent
 }

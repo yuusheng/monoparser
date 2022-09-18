@@ -6,8 +6,6 @@ export function parse(content: string) {
 
 export type MarkdownParserOptions = marked.RendererObject
 
-type KeyOfMarkdownParserOptions = keyof MarkdownParserOptions
-
 type DefineOptionParamsType =
   | MarkdownParserOptions
   | (() => MarkdownParserOptions)
@@ -55,7 +53,8 @@ export class MarkdownParser {
     this.renderer = new Renderer()
 
     const curOptions = Object.assign(defaultConfig, options)
-    Object.keys(curOptions).forEach((key) => {
+    ;(Object.keys(curOptions) as (keyof typeof curOptions)[]).forEach((key) => {
+      // @ts-ignore
       this.renderer[key] = curOptions[key]
     })
 
