@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "discription": "A simple markdown parser base on marked",
   "author": "yuusheng <contact@yuusheng.cn>",
+  "repository": "https://github.com/yuusheng/monoparser/tree/master/packages/md-parser",
   "keywords": [
     "markdown",
     "marked"
