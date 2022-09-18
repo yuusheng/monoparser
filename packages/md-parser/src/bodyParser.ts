@@ -53,9 +53,8 @@ export class MarkdownParser {
     this.renderer = new Renderer()
 
     const curOptions = Object.assign(defaultConfig, options)
-    ;(Object.keys(curOptions) as (keyof typeof curOptions)[]).forEach((key) => {
-      // @ts-ignore
-      this.renderer[key] = curOptions[key]
+    ;(Object.keys(curOptions) as (keyof Renderer<never>)[]).forEach((key) => {
+      this.renderer[key] = (curOptions as any)[key]
     })
 
     marked.setOptions({
