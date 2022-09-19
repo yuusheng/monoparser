@@ -20,7 +20,7 @@ const content = `# Monoparser`
 const html = analyseArticle(content)
 ```
 
-analyseArticle will return a html with our default class:
+`analyseArticle` will return a html with our default class:
 `<h1 class="mono-heading" >Monoparser</h1>`
 
 if you want customize your render style, you can run:
@@ -46,7 +46,7 @@ If you want toc support(WIP)
 const { html, toc } = analyseArticle(content, options, true)
 ```
 
-If you want to use our default settings you can run
+If you want to use our default styles you can:
 
 ```js
 import '@monoparser/md-parser/default.css'
