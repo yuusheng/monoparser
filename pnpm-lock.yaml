@@ -29,14 +29,19 @@ importers:
   packages/md-parser:
     specifiers:
       '@types/marked': ^4.0.7
+      highlight.js: ^11.6.0
       marked: ^4.1.0
     dependencies:
+      highlight.js: registry.npmmirror.com/highlight.js/11.6.0
       marked: registry.npmmirror.com/marked/4.1.0
     devDependencies:
       '@types/marked': registry.npmmirror.com/@types/marked/4.0.7
 
   playground:
-    specifiers: {}
+    specifiers:
+      '@monoparser/md-parser': workspace:^0.0.3
+    dependencies:
+      '@monoparser/md-parser': link:../packages/md-parser
 
 packages:
 
@@ -2136,6 +2141,13 @@ packages:
     dependencies:
       function-bind: registry.npmmirror.com/function-bind/1.1.1
     dev: true
+
+  registry.npmmirror.com/highlight.js/11.6.0:
+    resolution: {integrity: sha512-ig1eqDzJaB0pqEvlPVIpSSyMaO92bH1N2rJpLMN/nX396wTpDA4Eq0uK+7I/2XG17pFaaKE0kjV/XPeGt7Evjw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/highlight.js/-/highlight.js-11.6.0.tgz}
+    name: highlight.js
+    version: 11.6.0
+    engines: {node: '>=12.0.0'}
+    dev: false
 
   registry.npmmirror.com/hookable/5.3.0:
     resolution: {integrity: sha512-4gTA2q08HT8G32uIW7Jpro3rSXgT2ZTM8R6+r7H7joq90eZlqFPPTvHD6w8WZUohIrbXbDperL96ilb6dkNxNw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/hookable/-/hookable-5.3.0.tgz}

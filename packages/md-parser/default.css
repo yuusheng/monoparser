@@ -1,0 +1,70 @@
+.mono-heading {
+  margin-bottom: 0.75rem;
+}
+
+.mono-heading__bold {
+  font-weight: 700;
+  scroll-margin-top: 0.25rem /* 4px */;
+}
+
+.mono-listitem {
+  list-style: disc;
+  margin-bottom: 0.5rem;
+  list-style-position: inside;
+}
+
+.mono-paragraph {
+  width: 100%;
+}
+
+.mono-strong {
+  margin: 0 0.1rem;
+  font-weight: 700;
+}
+
+.mono-blockquote {
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  font-style: italic;
+  background-color: rgb(245 245 245);
+  color: rgb(82 82 82);
+  border-left: 4px rgb(163 163 163) solid;
+}
+
+.mono-codespan {
+  background-color: rgb(243 244 246);
+  color: rgb(67 56 202);
+  padding: 0.25rem;
+  margin: 0 0.25rem;
+  border-radius: 0.25rem;
+}
+
+.mono-table__container {
+  position: relative;
+  margin: 0.75rem 0;
+  overflow-x: auto;
+  font-weight: 700;
+  border-radius: 0.5rem;
+
+  -webkit-box-shadow: 10px 7px 14px -3px rgba(204, 204, 204, 0.53);
+  -moz-box-shadow: 10px 7px 14px -3px rgba(204, 204, 204, 0.53);
+  box-shadow: 10px 7px 14px -3px rgba(204, 204, 204, 0.53);
+}
+
+.mono-table {
+  width: 100%;
+  text-align: left;
+  color: rgb(107 114 128);
+  font-weight: 400;
+}
+
+.mono-table__head {
+  background-color: rgb(249 250 251);
+  text-transform: uppercase;
+  color: rgb(17 24 39);
+}
+
+.mono-table td,
+th {
+  padding: 0.75rem 0.5rem;
+}

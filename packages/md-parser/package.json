@@ -40,7 +40,8 @@
     "registry": "https://registry.npmjs.org/"
   },
   "files": [
-    "dist"
+    "dist",
+    "default.css"
   ],
   "scripts": {
     "test": "vitest",
@@ -50,6 +51,7 @@
     "@types/marked": "^4.0.7"
   },
   "dependencies": {
+    "highlight.js": "^11.6.0",
     "marked": "^4.1.0"
   }
 }

@@ -67,8 +67,8 @@ describe('parser', () => {
     expect(threeParams.contentHTML).toHaveProperty('content')
   })
 
-  it.skip('should have the discription of the md file', async () => {
-    expect(await analyseArticle(resolve(__dirname, './test.md')))
+  it.skip('should have the discription of the md file', () => {
+    expect(analyseArticle(resolve(__dirname, './test.md')))
       .toMatchInlineSnapshot(`
         {
           "contentHTML": "<h1 id=\\"h1\\">h1</h1>

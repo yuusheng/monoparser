@@ -16,14 +16,14 @@ export const defineOption = (options: DefineOptionParamsType) =>
 const defaultConfig = defineOption({
   heading(text, level, raw) {
     // let anchor = tocObj.add(text, level)
-    return `<h${level} class="mb-3 ${
-      level >= 2 ? 'font-bold scroll-mt-1' : ''
+    return `<h${level} class="mono-heading ${
+      level >= 2 ? 'mono-heading__bold' : ''
     }" >${text}</h${level}>\n`
   },
   table(header, body) {
-    return `<div class="relative my-3 overflow-x-auto shadow-md shadow-gray-100 sm:rounded-lg">
-      <table class="w-full text-left text-gray-500">
-        <thead class="bg-gray-50 uppercase text-gray-900 dark:bg-gray-700 dark:text-gray-400">
+    return `<div class="mono-table__container">
+      <table class="mono-table">
+        <thead class="mono-table__head">
           ${header}
         </thead>
         ${body}
@@ -31,19 +31,19 @@ const defaultConfig = defineOption({
     </div>`
   },
   blockquote(quote) {
-    return `<blockquote  class="p-4 italic border-l-4 bg-neutral-100 text-neutral-600 border-neutral-400 quote mb-3">${quote}</blockquote>`
+    return `<blockquote  class="mono-blockquote">${quote}</blockquote>`
   },
   paragraph(text) {
-    return `<p class="w-full">${text}</p>`
+    return `<p class="mono-paragraph">${text}</p>`
   },
   strong(text) {
-    return `<strong class="font-bold mx-[0.1rem]">${text}</strong>`
+    return `<strong class="mono-strong">${text}</strong>`
   },
   listitem(text) {
-    return `<li class="list-disc list-inside mb-2">${text}</li>`
+    return `<li class="mono-listitem">${text}</li>`
   },
   codespan(text) {
-    return `<code class="bg-gray-100 text-indigo-700 p-1 mx-1 rounded">${text}</code>`
+    return `<code class="mono-codespan">${text}</code>`
   },
 })
 
