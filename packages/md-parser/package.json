@@ -51,7 +51,6 @@
     "@types/marked": "^4.0.7"
   },
   "dependencies": {
-    "highlight.js": "^11.6.0",
     "marked": "^4.1.0"
   }
 }
