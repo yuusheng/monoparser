@@ -21,9 +21,9 @@ const defaultConfig = defineOption({
     }" >${text}</h${level}>\n`
   },
   table(header, body) {
-    return `<div class="mono-table__container">
-      <table class="mono-table">
-        <thead class="mono-table__head">
+    return `<div class="mono-table__container" >
+      <table class="mono-table" >
+        <thead class="mono-table__head" >
           ${header}
         </thead>
         ${body}
@@ -31,19 +31,23 @@ const defaultConfig = defineOption({
     </div>`
   },
   blockquote(quote) {
-    return `<blockquote  class="mono-blockquote">${quote}</blockquote>`
+    return `<blockquote  class="mono-blockquote" >${quote}</blockquote>`
   },
   paragraph(text) {
-    return `<p class="mono-paragraph">${text}</p>`
+    return `<p class="mono-paragraph" >${text}</p>`
   },
   strong(text) {
-    return `<strong class="mono-strong">${text}</strong>`
+    return `<strong class="mono-strong" >${text}</strong>`
+  },
+  list(body, ordered) {
+    const type = ordered ? 'ol' : 'ul'
+    return `<${type} class="mono-list" >${body}</${type}>`
   },
   listitem(text) {
-    return `<li class="mono-listitem">${text}</li>`
+    return `<li class="mono-listitem" >${text}</li>`
   },
   codespan(text) {
-    return `<code class="mono-codespan">${text}</code>`
+    return `<code class="mono-codespan" >${text}</code>`
   },
 })
 

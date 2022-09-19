@@ -1,4 +1,5 @@
 .mono-heading {
+  margin: 0;
   margin-bottom: 0.75rem;
 }
 
@@ -7,13 +8,18 @@
   scroll-margin-top: 0.25rem /* 4px */;
 }
 
+.mono-list {
+  margin: 0;
+  padding: 0;
+}
+
 .mono-listitem {
-  list-style: disc;
   margin-bottom: 0.5rem;
   list-style-position: inside;
 }
 
 .mono-paragraph {
+  margin: 0;
   width: 100%;
 }
 
@@ -23,6 +29,7 @@
 }
 
 .mono-blockquote {
+  margin: 0;
   padding: 1rem;
   margin-bottom: 0.75rem;
   font-style: italic;

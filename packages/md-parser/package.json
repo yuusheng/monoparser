@@ -41,7 +41,7 @@
   },
   "files": [
     "dist",
-    "default.css"
+    "**/*.css"
   ],
   "scripts": {
     "test": "vitest",
