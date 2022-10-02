@@ -1,6 +1,6 @@
 {
   "name": "@monoparser/md-parser",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "discription": "A simple markdown parser base on marked",
   "author": "yuusheng <contact@yuusheng.cn>",
   "homepage": "https://github.com/yuusheng/monoparser",
