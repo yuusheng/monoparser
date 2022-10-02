@@ -15,7 +15,7 @@ You can use it as follows:
 ```js
 import { analyseArticle } from '@monoparser/md-parser'
 
-const content = `# Monoparser`
+const content = '# Monoparser'
 
 const html = analyseArticle(content)
 ```
@@ -29,12 +29,12 @@ if you want customize your render style, you can run:
 import { analyseArticle, defineOptions } from '@monoparser/md-parser'
 
 const options = defineOptions({
-  ...your own options
+  // ...your own options
 })
 
 // or you can pass a function like this
 const options = defineOptions(() => {
-  ...your own options
+  // ...your own options
 })
 
 analyseArticle(content, options)

@@ -1,7 +1,7 @@
-import { describe, it, expect } from 'vitest'
 import { resolve } from 'path'
-import { analyseArticle, defineOption } from '../src'
 import { promises as fs } from 'fs'
+import { describe, expect, it } from 'vitest'
+import { analyseArticle } from '../src'
 
 export async function getFileContent(path: string) {
   const file = await fs.readFile(path, {

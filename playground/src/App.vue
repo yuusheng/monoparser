@@ -12,7 +12,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div v-html="html"></div>
+  <div v-html="html" />
   <ol>
     <li>第一句</li>
     <li>第二句</li>

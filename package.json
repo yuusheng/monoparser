@@ -1,8 +1,10 @@
 {
   "name": "monoparser",
   "version": "0.1.0",
-  "description": "A collection of parsers",
   "packageManager": "pnpm@7.5.1",
+  "description": "A collection of parsers",
+  "author": "yuusheng <contact@yuusheng.cn>",
+  "license": "MIT",
   "repository": "https://github.com/yuusheng/monoparser",
   "scripts": {
     "test": "vitest",
@@ -12,11 +14,10 @@
     "release": "bumpp package.json packages/**/package.json",
     "publish": "nr build && pnpm -r publish --access public --no-git-checks"
   },
-  "author": "yuusheng <contact@yuusheng.cn>",
-  "license": "MIT",
   "devDependencies": {
     "@types/node": "^18.7.18",
     "@vitejs/plugin-vue": "^3.1.0",
+    "@yuusheng/eslint-config": "^0.0.4",
     "bumpp": "^8.2.1",
     "eslint": "^8.23.1",
     "tsx": "^3.9.0",
@@ -25,5 +26,11 @@
     "vite": "^3.1.1",
     "vitest": "^0.23.2",
     "vue": "^3.2.39"
+  },
+  "eslintConfig": {
+    "extends": "@yuusheng",
+    "rules": {
+      "no-control-regex": 0
+    }
   }
 }

@@ -1,5 +1,4 @@
-import path from 'path'
-import { it, expect } from 'vitest'
+import { expect, it } from 'vitest'
 import { headerParser } from '../src'
 
 const content = `
@@ -21,7 +20,7 @@ it('haeder interpreter should work', () => {
 })
 
 it('test', () => {
-  let str = `11111
+  const str = `11111
 2222
 `
   const reg = /.*(?<=\n)/gs

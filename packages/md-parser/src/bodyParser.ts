@@ -1,4 +1,4 @@
-import { marked, Renderer } from 'marked'
+import { Renderer, marked } from 'marked'
 
 export function parse(content: string) {
   return marked.parse(content)
@@ -14,7 +14,7 @@ export const defineOption = (options: DefineOptionParamsType) =>
   typeof options === 'function' ? options() : options
 
 const defaultConfig = defineOption({
-  heading(text, level, raw) {
+  heading(text, level) {
     // let anchor = tocObj.add(text, level)
     return `<h${level} class="mono-heading ${
       level >= 2 ? 'mono-heading__bold' : ''
@@ -81,7 +81,8 @@ export class MarkdownParser {
   render(content: string): string
   render(content: string, toc: boolean): renderResult
   render(content: any, toc = false): string | renderResult {
-    if (!toc) return marked(content)
+    if (!toc)
+      return marked(content)
     return { content: marked(content) }
   }
 }

@@ -1,13 +1,13 @@
 {
   "name": "playground",
   "version": "0.0.0",
-  "description": "",
   "private": true,
+  "description": "",
+  "author": "yuusheng <contact@yuusheng.cn>",
+  "license": "MIT",
   "scripts": {
     "dev": "vite"
   },
-  "author": "yuusheng <contact@yuusheng.cn>",
-  "license": "MIT",
   "dependencies": {
     "@monoparser/md-parser": "workspace:*"
   }

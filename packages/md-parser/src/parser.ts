@@ -1,9 +1,12 @@
-import { MarkdownParser, renderResult } from './bodyParser'
-import {
+import type { renderResult } from './bodyParser'
+import { MarkdownParser } from './bodyParser'
+import type {
   HeaderContent,
+  MarkdownParserOptions,
+} from '.'
+import {
   headerParser,
   headerReg,
-  MarkdownParserOptions,
 } from '.'
 
 export function analyseArticle(
@@ -26,14 +29,14 @@ export function analyseArticle(
 export function analyseArticle(
   fileContent: string,
   option?: MarkdownParserOptions,
-  toc = false
+  toc = false,
 ) {
   const description = headerParser(fileContent)
   const mainContent = fileContent.replace(headerReg, '')
 
   const parser = new MarkdownParser(option || {})
 
-  let contentHTML = toc
+  const contentHTML = toc
     ? parser.render(mainContent, toc)
     : parser.render(mainContent)
   return { contentHTML, description }
